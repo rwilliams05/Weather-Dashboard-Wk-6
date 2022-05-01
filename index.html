@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <!--header-->
+  <header class="container-fluid bg-info text-light mb-5 p-3">
+    <div class="d-flex align-items-center">
+      <h1 class="text-center">Weather Dashboard</h1>
+    </div>
+  </header>
+  <h1>Search for a City</h1>
+  <!--search form and search history buttons-->
+  <div class="container">
+    <div class="row">
+      <div class="btn-group-vertical mr-5 col-3" style="width:15rem;">
+        <form id="form">
+          <input type="text" name="city" />
+          <button>Search</button>
+        </form>
+        <div id="searchHistory">
+          <button type="button" class="btn btn-secondary mb-1" id="search0"></button>
+          <button type="button" class="btn btn-secondary mb-1" id="search1"></button>
+          <button type="button" class="btn btn-secondary mb-1" id="search2"></button>
+          <button type="button" class="btn btn-secondary mb-1" id="search3"></button>
+          <button type="button" class="btn btn-secondary mb-1" id="search4"></button>
+          <button type="button" class="btn btn-secondary mb-1" id="search5"></button>
+          <button type="button" class="btn btn-secondary mb-1" id="search6"></button>
+          <button type="button" class="btn btn-secondary mb-1" id="search7"></button>
+        </div>
+      </div>
+      <div class="card ml-1 mb-3 card border-secondary" text-align:center style="width: 50rem;">
+        <div class="card-header card text-white bg-secondary" id="todayHeader">
+          <!--Displays today's weather in chosen city-->
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="todayIcon"></li>
+          <li class="list-group-item" id="todayTemp"></li>
+          <li class="list-group-item" id="todayWind"></li>
+          <li class="list-group-item" id="todayHum"></li>
+          <li class="list-group-item" id="todayUvi"></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--Displays five-day forecast, with one card for each day, in chosen location-->
+
+    <div class="row justify-content-end ">
+      <h2>Five Day Forecast</h2>
+    </div>
+    <div class="row justify-content-end">
+
+      <div class="card " style="width: 10rem;">
+        <div class="card-header" id="date1">
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item card text-white bg-secondary" id="day1Temp"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day1Wind"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day1Hum"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day1Icon"></li>
+        </ul>
+      </div> 
+
+      <div class="card" style="width: 10rem;">
+        <div class="card-header" id="date2">
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item card text-white bg-secondary" id="day2Temp"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day2Wind"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day2Hum"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day2Icon"></li>
+        </ul>
+      </div>
+
+      <div class="card" style="width: 10rem;">
+        <div class="card-header" id="date3">
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item card text-white bg-secondary" id="day3Temp"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day3Wind"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day3Hum"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day3Icon"></li>
+        </ul>
+      </div>
+
+      <div class="card" style="width: 10rem;">
+        <div class="card-header" id="date4">
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item card text-white bg-secondary" id="day4Temp"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day4Wind"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day4Hum"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day4Icon"></li>
+        </ul>
+      </div>
+
+      <div class="card" style="width: 10rem;">
+        <div class="card-header" id="date5">
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item card text-white bg-secondary" id="day5Temp"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day5Wind"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day5Hum"></li>
+          <li class="list-group-item card text-white bg-secondary" id="day5Icon"></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
